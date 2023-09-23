@@ -1,10 +1,10 @@
 import inquirer from "inquirer";
 
 
-var userInput = inquirer.prompt([
+var userInput = await inquirer.prompt([
     {
         type: "input",
-        name: "firstNum",
+        name: "num1",
         message: "Enter your First Number",
         validate: (ans) => {
             if (!ans) {
@@ -16,7 +16,7 @@ var userInput = inquirer.prompt([
     },
     {
         type: "input",
-        name: "secondNum",
+        name: "num2",
         message: "Enter Your Second Number",
         validate: (ans) => {
             if (!ans) {
@@ -40,4 +40,43 @@ var userInput = inquirer.prompt([
     }
 ])
 
+
+
+
+
+let result: number;
+
+switch (userInput.operations) {
+    case "Addition":
+        result = userInput.num1 + userInput.num2;
+        console.log("The Addition of number 1 and number 2 is", result);
+        break;
+    case "Subtraction":
+        result = userInput.num1 - userInput.num2;
+        console.log("The Subtraction of number 1 and number 2 is", result);
+        break;
+
+    case "Multiplication":
+        result = userInput.num1 * userInput.num2;
+        console.log("The Multiplication of number 1 and number 2 is", result);
+        break;
+
+    case "Division":
+        result = userInput.num1 / userInput.num2;
+        console.log("The Division of number 1 and number 2 is", result);
+        break;
+
+    case "Modulos":
+        result = userInput.num1 % userInput.num2;
+        console.log("The Modulos of number 1 and number 2 is", result);
+        break;
+
+    case "Exponent":
+        result = userInput.num1 ** userInput.num2;
+        console.log("The Exponent of number 1 and number 2 is", result);
+        break;
+
+
+
+}
 
